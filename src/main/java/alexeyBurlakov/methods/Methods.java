@@ -14,6 +14,15 @@ public class Methods {
         String text = dtf.format(localDate);
         return "Дата основания "+text;
     }
+    public static int yearConvertor(String s){
+       int x = Integer.parseInt(s);
+       if(s.length()>2)
+           return x;
+       if(x>21)
+           return x+1900;
+       else
+           return x+2000;
+    }
     public void information(Organization [] organizations){
         Stream<Organization> stream = Arrays.stream(organizations);
         stream.forEach(s -> System.out.println(s.getShortName()+" - "+convertor(s.getDate())));
@@ -43,7 +52,7 @@ public class Methods {
            temp = date.split("\\/");
        int day = Integer.parseInt(temp[0]);
        int month = Integer.parseInt(temp[1]);
-       int year = temp[2].length()>2 ? Integer.parseInt(temp[2]) : Integer.parseInt(temp[2]) >21 ? 1900+Integer.parseInt(temp[2]) : 2000+Integer.parseInt(temp[2]);
+       int year = yearConvertor(temp[2]);
        ld=LocalDate.of(year,month,day);
        stream.filter(x ->x.getDate().isAfter(ld)).forEach(y -> System.out.println("Company full name: "+y.getName()+", date of foundation "+y.getDate()));
     }
