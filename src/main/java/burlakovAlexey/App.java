@@ -16,7 +16,7 @@ public class App {
         ObjectMapper mapper = new ObjectMapper();
         //Organization org = new Organization("Albatros","shortAlb","Moscow","02","522","0202","1985.07.11");
         //mapper.writeValue(new File("C:\\Users\\Алексей Б\\Desktop\\org.json"), org);
-        Organization [] orgArr = mapper.readValue(new File("C:\\Users\\Алексей Б\\Desktop\\org2.json"), Organization[].class);
+        Organization [] orgArr = mapper.readValue(new File("org2.json"), Organization[].class);
         methods.information(orgArr);
         methods.closePapers(orgArr);
         methods.dateOrganization("01.02.1900",orgArr);

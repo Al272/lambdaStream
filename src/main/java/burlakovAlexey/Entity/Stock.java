@@ -1,3 +1,5 @@
+package burlakovAlexey;
+
 import java.time.LocalDate;
 
 public class Stock {

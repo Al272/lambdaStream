@@ -1,3 +1,5 @@
+package burlakovAlexey;
+
 import org.codehaus.jackson.map.util.ISO8601Utils;
 
 import java.time.LocalDate;
@@ -11,7 +13,7 @@ public class Methods {
         String text = dtf.format(localDate);
         return "Дата основания "+text;
     }
-    public void information(Organization [] organizations){
+    public void information(Organization[] organizations){
         Stream<Organization> stream = Arrays.stream(organizations);
         stream.forEach(s -> System.out.println(s.getShortName()+" - "+convertor(s.getDate())));
     }
@@ -28,7 +30,7 @@ public class Methods {
         }).count();
         System.out.println("Amount of papers: "+l);
     }
-    public void dateOrganization(String date,Organization[] organizations){
+    public void dateOrganization(String date, Organization[] organizations){
        Stream<Organization> stream =Arrays.stream(organizations);
        LocalDate ld;
        String[] temp=null;
